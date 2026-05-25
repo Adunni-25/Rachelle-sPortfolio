@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Rachelle | Connect</title>
+</head>
+<body>
+   <nav class="navbar">
+    <div class="nav-brand">Rachelle</div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="goals.html">Goals</a></li>
+        <li><a href="connect.html">Connect</a></li>
+    </ul>
+</nav>
+<section class="page-hero">
+    <p class="page-label">Let's Talk</p>
+    <h1>Connect</h1>
+</section>
+
+<section class="connect-section">
+    <div class="connect-intro">
+        <p>I'm always open to connecting with people who are building, learning, and dreaming big. Whether you're a recruiter, a fellow techie, or someone who just believes in what Simply Aurora is becoming — let's talk.</p>
+    </div>
+
+    <div class="connect-links">
+
+        <div class="connect-card" id="email-card" onclick="copyEmail()">
+            <img src="images/mail.png" alt="Email" class="connect-icon-img">
+            <div class="connect-text">
+                <h2>Email</h2>
+                <p id="email-text">simplyaurora6601@gmail.com</p>
+            </div>
+        </div>
+
+        <a href="https://www.linkedin.com/in/ayomide-tijani-701b83401" target="_blank" class="connect-card">
+            <img src="images/linkedin.png" alt="LinkedIn" class="connect-icon-img">
+            <div class="connect-text">
+                <h2>LinkedIn</h2>
+                <p>Let's connect professionally</p>
+            </div>
+        </a>
+
+        <a href="https://github.com/Adunni-25" target="_blank" class="connect-card">
+            <img src="images/github.png" alt="GitHub" class="connect-icon-img">
+            <div class="connect-text">
+                <h2>GitHub</h2>
+                <p>Follow my coding journey</p>
+            </div>
+        </a>
+
+        <a href="https://substack.com/@simplyaurora?r=7mnays&utm_campaign=profile&utm_medium=profile-page" target="_blank" class="connect-card">
+            <img src="images/substack.png" alt="Substack" class="connect-icon-img">
+            <div class="connect-text">
+                <h2>Substack</h2>
+                <p>Read my thoughts & writing</p>
+            </div>
+        </a>
+
+    </div>
+</section>
+
+<section class="contact-form-section" aria-label="Contact Form">
+    <p class="section-label">Send Me A Message</p>
+    <form class="contact-form" action="https://formspree.io/f/xkoeovew" method="POST">
+        <input type="hidden" name="_next" value="connect.html">
+        <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="What's your name?">
+        </div>
+        <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="Your email address">
+        </div>
+        <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" rows="6" placeholder="What's on your mind?"></textarea>
+        </div>
+        <button type="submit" class="btn-primary">Send Message</button>
+    </form>
+</section>
+<footer class="footer">
+    <div class="footer-content">
+        <p class="footer-brand">Rachelle</p>
+        <p class="footer-tagline">Building at the intersection of cybersecurity & AI</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="goals.html">Goals</a>
+            <a href="connect.html">Connect</a>
+        </div>
+        <p class="footer-copy">© 2025 Rachelle · Simply Aurora · All Rights Reserved</p>
+    </div>
+</footer>
+
+<script>
+    function copyEmail() {
+        const email = "simplyaurora6601@gmail.com";
+        navigator.clipboard.writeText(email).then(function() {
+            const emailText = document.getElementById("email-text");
+            emailText.textContent = "Copied!";
+            emailText.style.color = "#C9A84C";
+            setTimeout(function() {
+                emailText.textContent = "simplyaurora6601@gmail.com";
+                emailText.style.color = "";
+            }, 2000);
+        });
+    }
+
+    document.querySelector('.contact-form').addEventListener('submit', function() {
+        setTimeout(function() {
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('message').value = '';
+        }, 100);
+    });
+
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+    const navItems = document.querySelectorAll(".nav-links a");
+
+    navItems.forEach(function(link) {
+        const linkPage = link.getAttribute("href").split("/").pop();
+        if (linkPage === currentPage || 
+           (currentPage === "" && linkPage === "index.html")) {
+            link.classList.add("active");
+        }
+    });
+
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("nav-links");
+
+    hamburger.addEventListener("click", function() {
+        hamburger.classList.toggle("active");
+        navLinks.classList.toggle("open");
+    });
+
+    navLinks.querySelectorAll("a").forEach(function(link) {
+        link.addEventListener("click", function() {
+            hamburger.classList.remove("active");
+            navLinks.classList.remove("open");
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Rachelle | Portfolio</title>
+</head>
+<body>
+    <nav class="navbar">
+    <div class="nav-brand">Rachelle</div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="goals.html">Goals</a></li>
+        <li><a href="connect.html">Connect</a></li>
+    </ul>
+</nav>
+<section class="page-hero">
+    <p class="page-label">My Work & Learning</p>
+    <h1>Portfolio</h1>
+</section>
+
+<!-- PROJECTS -->
+<section class="portfolio-section">
+    <p class="section-label">Projects</p>
+    <div class="project-cards">
+
+        <div class="project-card">
+            <div class="project-status in-progress">In Progress</div>
+            <h2>Simply Aurora</h2>
+            <p>A personal tech brand and women-in-tech community being built to provide efficient, effective solutions to companies and startups — and to bring light to Nigeria. Beauty in Simplicity.</p>
+            <div class="project-tags">
+                <span>Branding</span>
+                <span>Community Building</span>
+                <span>Entrepreneurship</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-status completed">Completed</div>
+            <h3>This Portfolio Website</h3>
+            <p>Designed and built from scratch as part of my Web Design & Development coursework at UNILAG. Pure HTML, CSS and JavaScript.</p>
+            <div class="project-tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-status completed">Completed</div>
+            <h3>JAMB Mentorship</h3>
+            <p>Mentored incoming JAMB candidates during my first university holiday. One mentee surpassed my record with a score of 347.</p>
+            <div class="project-tags">
+                <span>Teaching</span>
+                <span>Leadership</span>
+                <span>Impact</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-status in-progress">In Progress</div>
+            <h3>UNILAG CS Coursework</h3>
+            <p>Actively studying C Programming, Python, Web Development, Cybersecurity, and Algorithms as part of my Computer Science degree.</p>
+            <div class="project-tags">
+                <span>C</span>
+                <span>Python</span>
+                <span>HTML & CSS</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- GITHUB -->
+<section class="github-section">
+    <p class="section-label">Find Me On GitHub</p>
+    <div class="github-card">
+        <img src="images/github.png" alt="GitHub" class="github-icon-img">
+        <div class="github-text">
+            <h2>My GitHub Profile</h2>
+            <p>Follow my coding journey, explore my repositories, and see my work as it grows semester by semester.</p>
+        </div>
+        <a href="https://github.com/Adunni-25" target="_blank" class="btn-primary">View Profile</a>
+    </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="portfolio-section">
+    <p class="section-label">Certifications</p>
+
+    <div class="cert-group">
+        <h3 class="cert-status-label">✓ Completed</h3>
+        <div class="cert-cards">
+            <div class="cert-card completed-cert">
+                <p class="cert-name">Introduction to Cybersecurity</p>
+                <p class="cert-issuer">Cisco</p>
+            </div>
+            <div class="cert-card completed-cert">
+                <p class="cert-name">Python</p>
+                <p class="cert-issuer">Kaggle</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="cert-group">
+        <h3 class="cert-status-label">⏳ In Progress</h3>
+        <div class="cert-cards">
+            <div class="cert-card progress-cert">
+                <p class="cert-name">CS50's Introduction to Cybersecurity</p>
+                <p class="cert-issuer">Harvard University</p>
+            </div>
+            <div class="cert-card progress-cert">
+                <p class="cert-name">Networking Basics</p>
+                <p class="cert-issuer">Cisco Networking Academy</p>
+            </div>
+            <div class="cert-card progress-cert">
+                <p class="cert-name">Cybersecurity Certificate</p>
+                <p class="cert-issuer">IBM SkillsBuild via University of the People</p>
+            </div>
+            <div class="cert-card progress-cert">
+                <p class="cert-name">Introduction to Generative AI & Agents</p>
+                <p class="cert-issuer">Microsoft Learn</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="cert-group">
+        <h3 class="cert-status-label">🎯 Examination Candidacy</h3>
+        <div class="cert-cards">
+            <div class="cert-card candidacy-cert">
+                <p class="cert-name">Certified in Cybersecurity (CC)</p>
+                <p class="cert-issuer">ISC2 — Registered Candidate</p>
+            </div>
+        </div>
+    </div>
+
+</section>
+<footer class="footer">
+    <div class="footer-content">
+        <p class="footer-brand">Rachelle</p>
+        <p class="footer-tagline">Building at the intersection of cybersecurity & AI</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="goals.html">Goals</a>
+            <a href="connect.html">Connect</a>
+        </div>
+        <p class="footer-copy">© 2025 Rachelle · Simply Aurora · All Rights Reserved</p>
+    </div>
+</footer>
+<script>
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+    const navItems = document.querySelectorAll(".nav-links a");
+
+    navItems.forEach(function(link) {
+        const linkPage = link.getAttribute("href").split("/").pop();
+        if (linkPage === currentPage || 
+           (currentPage === "" && linkPage === "index.html")) {
+            link.classList.add("active");
+        }
+    });
+
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("nav-links");
+
+    hamburger.addEventListener("click", function() {
+        hamburger.classList.toggle("active");
+        navLinks.classList.toggle("open");
+    });
+
+    navLinks.querySelectorAll("a").forEach(function(link) {
+        link.addEventListener("click", function() {
+            hamburger.classList.remove("active");
+            navLinks.classList.remove("open");
+        });
+    });
+</script>
+</body>
+</html>

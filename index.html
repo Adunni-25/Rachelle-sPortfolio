@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Rachelle | Home</title>
+</head>
+<body>
+    <nav class="navbar">
+    <div class="nav-brand">Rachelle</div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="goals.html">Goals</a></li>
+        <li><a href="connect.html">Connect</a></li>
+    </ul>
+</nav>
+    <section class="hero">
+    <div class="hero-content">
+        <div class="hero-left">
+            <p class="hero-greeting">Hello, I'm</p>
+            <h1 class="hero-name">Rachelle</h1>
+            <p class="hero-fullname">Tijani Ayomide Tamunotonye</p>
+            <p class="hero-matric">251901008</p>
+            <p class="hero-tagline" id="typing-text"></p>
+            <div class="hero-buttons">
+                <a href="portfolio.html" class="btn-primary">Take A Look</a>
+                <a href="connect.html" class="btn-secondary">Let's Connect</a>
+            </div>
+        </div>
+        <div class="hero-right">
+            <img src="images/me.jpg" alt="Rachelle" class="hero-photo">
+        </div>
+    </div>
+</section>
+<section class="snapshot">
+    <p class="snapshot-label">What I'm About</p>
+    <div class="snapshot-cards">
+
+        <div class="snapshot-card">
+            <div class="snapshot-icon">🔐</div>
+            <h2>Cybersecurity</h2>
+            <p>Passionate about digital security, ethical hacking, and protecting systems. Currently pursuing the ISC2 CC certification and Harvard's CS50 Cybersecurity course.</p>
+        </div>
+
+        <div class="snapshot-card">
+            <div class="snapshot-icon">🤖</div>
+            <h2>AI & Machine Learning</h2>
+            <p>Exploring the intersection of intelligence and technology. Studying generative AI, machine learning fundamentals, and how AI can drive real change in Nigeria.</p>
+        </div>
+
+        <div class="snapshot-card">
+            <div class="snapshot-icon">🌟</div>
+            <h2>Simply Aurora</h2>
+            <p>Founder of Simply Aurora — a tech brand and women-in-tech community being built to bring light to Nigeria. Beauty in Simplicity.</p>
+        </div>
+
+    </div>
+</section>
+<footer class="footer">
+    <div class="footer-content">
+        <p class="footer-brand">Rachelle</p>
+        <p class="footer-tagline">Building at the intersection of cybersecurity & AI</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="goals.html">Goals</a>
+            <a href="connect.html">Connect</a>
+        </div>
+        <p class="footer-copy">© 2025 Rachelle · Simply Aurora · All Rights Reserved</p>
+    </div>
+</footer>
+<script>
+    const text = "CS student at UNILAG. Building at the intersection of cybersecurity & AI — and laying the groundwork for something bigger.";
+    const typingElement = document.getElementById("typing-text");
+    let index = 0;
+
+    function typeWriter() {
+        if (index < text.length) {
+            typingElement.textContent += text.charAt(index);
+            index++;
+            setTimeout(typeWriter, 40);
+        }
+    }
+
+    typeWriter();
+
+    const navItems = document.querySelectorAll(".nav-links a");
+    navItems.forEach(function(link) {
+        if (link.getAttribute("href") === "index.html") {
+            link.classList.add("active");
+        }
+    });
+
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("nav-links");
+
+    hamburger.addEventListener("click", function() {
+        hamburger.classList.toggle("active");
+        navLinks.classList.toggle("open");
+    });
+
+    navLinks.querySelectorAll("a").forEach(function(link) {
+        link.addEventListener("click", function() {
+            hamburger.classList.remove("active");
+            navLinks.classList.remove("open");
+        });
+    });
+</script>
+</body>
+</html>

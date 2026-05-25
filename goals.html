@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Rachelle | Goals & Visions</title>
+</head>
+<body>
+    <nav class="navbar">
+    <div class="nav-brand">Rachelle</div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="goals.html">Goals</a></li>
+        <li><a href="connect.html">Connect</a></li>
+    </ul>
+</nav>
+<section class="page-hero">
+    <p class="page-label">Where I'm Headed</p>
+    <h1>Goals & Vision</h1>
+</section>
+
+<!-- SHORT TERM GOALS -->
+<section class="goals-section">
+    <p class="section-label">Short Term Goals</p>
+    <div class="goals-grid">
+
+        <div class="goal-card">
+            <div class="goal-icon">🔐</div>
+            <h2>Cybersecurity Analyst & Penetration Tester</h2>
+            <p>Become a certified junior cybersecurity analyst and penetration tester, building real skills in ethical hacking and digital defence.</p>
+        </div>
+
+        <div class="goal-card">
+            <div class="goal-icon">🤖</div>
+            <h2>AI & Machine Learning Engineer</h2>
+            <p>Qualify as an AI and Machine Learning Engineer, mastering the tools and frameworks that power intelligent systems.</p>
+        </div>
+
+        <div class="goal-card">
+            <div class="goal-icon">🐍</div>
+            <h2>Python Proficiency</h2>
+            <p>Become well versed in Python and other similar languages, using code as a tool to build, automate, and innovate.</p>
+        </div>
+
+        <div class="goal-card">
+            <div class="goal-icon">🎓</div>
+            <h2>First Class CGPA</h2>
+            <p>Maintain a First Class CGPA throughout my time at UNILAG — academic excellence is non-negotiable.</p>
+        </div>
+
+        <div class="goal-card">
+            <div class="goal-icon">🌍</div>
+            <h2>Tech Communities</h2>
+            <p>Become an active member of She Code Africa, Girls Who Code, Girls Work It Together, and RTC — learning, contributing, and growing alongside other women in tech.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- LONG TERM VISION -->
+<section class="vision-section">
+    <p class="section-label">Long Term Vision</p>
+    <div class="vision-cards">
+
+        <div class="vision-card">
+            <h2>Aurora Foundation</h2>
+            <p>Found the Aurora Foundation — an educational initiative dedicated to bridging the digital divide for girls and women across generations in Nigeria. Giving the next generation something I never had: an environment that fosters ideas, learning, and limitless potential.</p>
+        </div>
+
+        <div class="vision-card">
+            <h2>A Digital Nigeria</h2>
+            <p>Drive automation into everyday Nigerian life, making technology accessible and indispensable. Building a Nigeria where people think as producers and providers — not just consumers.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- SIMPLY AURORA -->
+<section class="aurora-section">
+    <div class="aurora-content">
+        <p class="page-label">The Vision Behind It All</p>
+        <h2>Simply Aurora</h2>
+        <p class="aurora-motto">Beauty in Simplicity</p>
+        <p class="aurora-description">Simply Aurora is not just a brand — it's a vision and an initiative built to bring light to Nigeria in a simple way. A tech brand and problem-solving platform providing efficient, effective solutions to companies and startups alike. A community reshaping the mindset of Nigerian youth and beyond, one step at a time. Built to give the next generation something I never had — an environment that fosters ideas, learning, and innovation. Simply Aurora will change Nigeria. One solution at a time.</p>
+        <a href="connect.html" class="btn-secondary-light">Get In Touch</a>
+    </div>
+</section>
+<footer class="footer">
+    <div class="footer-content">
+        <p class="footer-brand">Rachelle</p>
+        <p class="footer-tagline">Building at the intersection of cybersecurity & AI</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="goals.html">Goals</a>
+            <a href="connect.html">Connect</a>
+        </div>
+        <p class="footer-copy">© 2025 Rachelle · Simply Aurora · All Rights Reserved</p>
+    </div>
+</footer>
+<script>
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+const navItems = document.querySelectorAll(".nav-links a");
+
+navItems.forEach(function(link) {
+    const linkPage = link.getAttribute("href").split("/").pop();
+    if (linkPage === currentPage || 
+       (currentPage === "" && linkPage === "index.html")) {
+        link.classList.add("active");
+    }
+});
+</script>
+
+<script>
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("nav-links");
+
+    hamburger.addEventListener("click", function() {
+        hamburger.classList.toggle("active");
+        navLinks.classList.toggle("open");
+    });
+
+    navLinks.querySelectorAll("a").forEach(function(link) {
+        link.addEventListener("click", function() {
+            hamburger.classList.remove("active");
+            navLinks.classList.remove("open");
+        });
+    });
+</script>
+</body>
+</html>

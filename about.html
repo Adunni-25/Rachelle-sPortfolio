@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Rachelle | About Me</title>
+</head>
+<body>
+   <nav class="navbar">
+    <div class="nav-brand">Rachelle</div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="goals.html">Goals</a></li>
+        <li><a href="connect.html">Connect</a></li>
+    </ul>
+</nav>
+<section class="page-hero">
+    <p class="page-label">Get To Know Me</p>
+    <h1>About Me</h1>
+</section>
+
+<section class="about-intro" aria-label="About Me Introduction">
+    <div class="about-text">
+        <p>I'm Rachelle, a Computer Science student at the University of Lagos with a deep curiosity for cybersecurity and artificial intelligence. I graduated as Valedictorian of my set — Best Overall Student across all three years of senior secondary school — and held the highest JAMB score in my school's history. But the achievement I'm most proud of is returning in my first university holiday to mentor the students who came after me, one of whom went on to break my record. That moment told me something important about the kind of person I want to be in tech — someone who builds others up. I'm the founder of Simply Aurora, a growing vision for a tech brand and community for women in tech, and I'm motivated every day by faith, curiosity, and the belief that the best is still ahead.</p>
+    </div>
+</section>
+
+<section class="about-details">
+
+    <div class="detail-block">
+        <h2>Education</h2>
+<div class="detail-item">
+    <h3>University of Lagos</h3>
+    <p>B.Sc. Computer Science — 2025 to present</p>
+</div>
+
+<div class="detail-item">
+    <h3>Current Courses — Second Semester</h3>
+    <div class="course-tags">
+        <span class="course-tag">GST 112 — Nigerian People & Culture</span>
+        <span class="course-tag">COS 102 — Problem Solving (Python)</span>
+        <span class="course-tag">LAG-CSC 104 — Intro to Web Design & Development</span>
+        <span class="course-tag">LAG-CYB 106 — Intro to Cybersecurity</span>
+        <span class="course-tag">LAG-CSC 106 — Intro to Algorithms & Data Structures</span>
+        <span class="course-tag">MTH 102 — Calculus</span>
+        <span class="course-tag">PHY 102 — Electricity in Physics</span>
+    </div>
+</div>
+        <div class="detail-item">
+            <h3>Oasis of Love Model Secondary School</h3>
+            <p>Senior Secondary School — SS1 to SS3</p>
+            <p>Senior Prefect | Valedictorian</p>
+        </div>
+    </div>
+
+    <div class="detail-block">
+        <h2>Skills</h2>
+        <div class="detail-item">
+            <h3>Technical</h3>
+            <p>C Programming · HTML · CSS · JavaScript</p>
+        </div>
+        <div class="detail-item">
+            <h3>Interests</h3>
+            <p>Cybersecurity · Artificial Intelligence · Machine Learning</p>
+        </div>
+        <div class="detail-item">
+            <h3>Soft Skills</h3>
+            <p>Leadership · Public Speaking · Strategic Thinking · Mentorship</p>
+        </div>
+    </div>
+
+    <div class="detail-block">
+        <h2>Achievements</h2>
+        <div class="detail-item">
+            <h3>Academic Excellence</h3>
+            <p>Valedictorian — Oasis of Love Model Secondary School</p>
+            <p>Best Overall Student — SS1, SS2 & SS3</p>
+            <p>Highest JAMB score in school history</p>
+        </div>
+        <div class="detail-item">
+            <h3>Leadership & Impact</h3>
+            <p>Senior Prefect — Oasis of Love Model Secondary School</p>
+            <p>Mentored JAMB candidates in first university holiday; one mentee scored 347</p>
+        </div>
+        <div class="detail-item">
+            <h3>Competitions</h3>
+            <p>Interhouse Scrabble — Gold Medal</p>
+            <p>Debate & Inter-school Writing Competitions</p>
+        </div>
+    </div>
+
+</section>
+
+<section class="cv-download" aria-label="Download CV">
+    <p>Want the full picture?</p>
+    <a href="cv.pdf" download class="btn-primary">Download My CV</a>
+</section>
+
+<footer class="footer">
+    <div class="footer-content">
+        <p class="footer-brand">Rachelle</p>
+        <p class="footer-tagline">Building at the intersection of cybersecurity & AI</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="goals.html">Goals</a>
+            <a href="connect.html">Connect</a>
+        </div>
+        <p class="footer-copy">© 2025 Rachelle · Simply Aurora · All Rights Reserved</p>
+    </div>
+</footer>
+
+<script>
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+    const navItems = document.querySelectorAll(".nav-links a");
+
+    navItems.forEach(function(link) {
+        const linkPage = link.getAttribute("href").split("/").pop();
+        if (linkPage === currentPage || 
+           (currentPage === "" && linkPage === "index.html")) {
+            link.classList.add("active");
+        }
+    });
+
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("nav-links");
+
+    hamburger.addEventListener("click", function() {
+        hamburger.classList.toggle("active");
+        navLinks.classList.toggle("open");
+    });
+
+    navLinks.querySelectorAll("a").forEach(function(link) {
+        link.addEventListener("click", function() {
+            hamburger.classList.remove("active");
+            navLinks.classList.remove("open");
+        });
+    });
+</script>
+</body>
+</html>
